@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CalendarView
 import android.widget.TextView
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
     lateinit var calendar: CalendarView
@@ -21,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         iloscdni = findViewById(R.id.textDlWyjazdu)
         calendar = findViewById(R.id.calendar)
 
-        calendar.setOnClickListener {
+
+        calendar.minDate = Date().time
+        calendar.maxDate = Date().time + 63113852000
 
 
-        }
     }
 }
