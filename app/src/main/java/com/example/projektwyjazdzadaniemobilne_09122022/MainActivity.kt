@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 if (wybrana.time.after(endDate.time)){
                     startDate.set(year, month, day)
                     koniec_wyj.text = ""
+                    iloscdni.text = ""
                     val startDateString = dateFormat.format(startDate.time)
                     pocz_wyj.text = startDateString
                 }
