@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var koniec_wyj: TextView
     private var startDate: Calendar = Calendar.getInstance()
     private var endDate: Calendar = Calendar.getInstance()
+    private var wybrana: Calendar = Calendar.getInstance()
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +39,22 @@ class MainActivity : AppCompatActivity() {
         calendar.setOnDateChangeListener { _, year, month, day ->
             val dateFormat = SimpleDateFormat("yyyy-MM-dd")
 
-            val endDateString = dateFormat.format(endDate.time)
+
             if (btn_poczwyj.isSelected){
                 startDate.set(year, month, day)
                 val startDateString = dateFormat.format(startDate.time)
                 pocz_wyj.text = startDateString
+            }
+            else if (btn_koniecwyj.isSelected){
+                wybrana.set(year, month, day)
+                    if (wybrana.time.before(startDate.time)){
+                        Toast.makeText(this, "nie można wybrac daty powrotu, która jest szybciej niz data startu", Toast.LENGTH_SHORT).show()
+                }
+                    else{
+                        endDate.set(year, month, day)
+                        val endDateString = dateFormat.format(endDate.time)
+                        koniec_wyj.text = endDateString
+                    }
             }
         }
         btn_poczwyj.setOnClickListener {
