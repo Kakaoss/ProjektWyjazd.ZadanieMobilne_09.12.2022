@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
@@ -34,10 +35,22 @@ class MainActivity : AppCompatActivity() {
         calendar.maxDate = Date().time + 63113852000
 
         calendar.setOnDateChangeListener { _, year, month, day ->
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
 
-            if (pocz_wyj.isSelected){
+            val endDateString = dateFormat.format(endDate.time)
+            if (btn_poczwyj.isSelected){
                 startDate.set(year, month, day)
+                val startDateString = dateFormat.format(startDate.time)
+                pocz_wyj.text = startDateString
             }
+        }
+        btn_poczwyj.setOnClickListener {
+            btn_poczwyj.isSelected = true
+            btn_koniecwyj.isSelected = false
+        }
+        btn_koniecwyj.setOnClickListener {
+            btn_koniecwyj.isSelected = true
+            btn_poczwyj.isSelected = false
         }
     }
 }
