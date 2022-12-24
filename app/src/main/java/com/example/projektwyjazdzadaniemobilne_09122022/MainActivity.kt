@@ -10,6 +10,7 @@ import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
+import kotlin.math.absoluteValue
 
 class MainActivity : AppCompatActivity() {
     lateinit var calendar: CalendarView
@@ -52,6 +53,8 @@ class MainActivity : AppCompatActivity() {
                 startDate.set(year, month, day)
                 val startDateString = dateFormat.format(startDate.time)
                 pocz_wyj.text = startDateString
+                val iloscdniwyjazdu = (endDate.getTimeInMillis() - startDate.getTimeInMillis()) / 86400000
+                iloscdni.text = "${iloscdniwyjazdu.absoluteValue+1}"
                 }
             }
             else if (btn_koniecwyj.isSelected){
@@ -63,6 +66,9 @@ class MainActivity : AppCompatActivity() {
                         endDate.set(year, month, day)
                         val endDateString = dateFormat.format(endDate.time)
                         koniec_wyj.text = endDateString
+                        val iloscdniwyjazdu = (endDate.getTimeInMillis() - startDate.getTimeInMillis()) / 86400000
+                        iloscdniwyjazdu.absoluteValue+1
+                        iloscdni.text = "${iloscdniwyjazdu.absoluteValue+1}"
                     }
             }
         }
