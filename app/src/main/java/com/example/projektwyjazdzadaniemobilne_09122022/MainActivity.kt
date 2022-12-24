@@ -41,9 +41,18 @@ class MainActivity : AppCompatActivity() {
 
 
             if (btn_poczwyj.isSelected){
+                wybrana.set(year, month, day)
+                if (wybrana.time.after(endDate.time)){
+                    startDate.set(year, month, day)
+                    koniec_wyj.text = ""
+                    val startDateString = dateFormat.format(startDate.time)
+                    pocz_wyj.text = startDateString
+                }
+                else{
                 startDate.set(year, month, day)
                 val startDateString = dateFormat.format(startDate.time)
                 pocz_wyj.text = startDateString
+                }
             }
             else if (btn_koniecwyj.isSelected){
                 wybrana.set(year, month, day)
