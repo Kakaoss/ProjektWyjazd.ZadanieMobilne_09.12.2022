@@ -27,7 +27,7 @@
 - Wybrane daty wyświetlane są u góry przy napisach Początek i Koniec wyjazdu
 - Przy wybraniu daty Końca wyjazdu, automatycznie są obliczane dni wyjazdu i wyświetlają się one przy napisie "Dlugosc wyjazdu :"
 
-<strong><em> 2. WERYFIKACJA I TESTOWANIE </strong></em>
+<strong><em> 3. WERYFIKACJA I TESTOWANIE </strong></em>
 
 - Program automatycznie wczytuje dzisiejszą date i umożliwia wybranie daty do 2 lat w przód
 - Po wybraniu daty początku i końca wyjazdu, poprawnie oblicza dni wyjazdu
