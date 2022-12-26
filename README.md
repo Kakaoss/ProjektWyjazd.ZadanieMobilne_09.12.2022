@@ -26,3 +26,10 @@
 - Następnie aby wybrać date końca wyjazdu należy wcisnąć przycisk "Koniec wyjazdu" następnie zaznaczyć date na kalendarzu
 - Wybrane daty wyświetlane są u góry przy napisach Początek i Koniec wyjazdu
 - Przy wybraniu daty Końca wyjazdu, automatycznie są obliczane dni wyjazdu i wyświetlają się one przy napisie "Dlugosc wyjazdu :"
+
+<strong><em> 2. Weryfikacja i Testowanie </strong></em>
+
+- Program automatycznie wczytuje dzisiejszą date i umożliwia wybranie daty do 2 lat w przód
+- Po wybraniu daty początku i końca wyjazdu, poprawnie oblicza dni wyjazdu
+- wybrane daty wyświetlają się u góry ekranu
+- Po wybraniu daty poczatku po dacie końca np : koniec wyjazdu "2022-12-29" a wybierzemy początek "2022-12-30". To data końca wyjazdu zostanie usunięta oraz długość wyjazdu zostanie zresetowana
